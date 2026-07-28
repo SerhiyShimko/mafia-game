@@ -10,10 +10,7 @@ Web version of the classic board game "Mafia", implemented with React + TypeScri
 
 ## Getting Started
 
-\`\`\`bash
-npm install
-npm run dev
-\`\`\`
+[PLAY](https://github.com/SerhiyShimko)
 
 ## Автор
 [SerhiyShimko](https://github.com/SerhiyShimko)
