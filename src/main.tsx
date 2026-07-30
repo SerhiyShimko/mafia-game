@@ -4,6 +4,7 @@ import { StrictMode } from "react";
 import App from "./App.tsx";
 import "./styles/reset.scss";
 import "./styles/variables.scss";
+import "./styles/global.scss";
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(

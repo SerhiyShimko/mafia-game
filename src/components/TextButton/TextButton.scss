@@ -1,0 +1,16 @@
+@use '../../styles/mixin.scss' as *;
+
+.text-button {
+  border-radius: 10px;
+  background-color: var(--color-button);
+  border: 1px solid var(--black-color);
+  width: max-content;
+  padding: 5px 10px;
+
+
+  &__text {
+    color: var(--black-color);
+
+    @include body-text;
+  }
+}

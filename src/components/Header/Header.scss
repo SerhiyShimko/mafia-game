@@ -1,0 +1,38 @@
+@use '../../styles/mixin.scss' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  min-width: 0;
+  width: 100%;
+  height: 70px;
+  background-color: var(--main-background);
+  padding-inline: 10px;
+  border-bottom: 1px solid var(--black-color);
+
+  &__button {
+    color: var(--color-button);
+  }
+
+  &__line {
+    width: 2px;
+    height: 80%;
+    background-color: var(--color-button);
+  }
+
+  &__main-text {
+    min-width: 0;
+    width: max-content;
+    color: var(--color-button);
+    text-align: center;
+
+    @include main-heading;
+  }
+
+  @include up($md) {
+    height: 90px;
+    padding-inline: 20px;
+  }
+}
