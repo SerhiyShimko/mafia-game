@@ -1,23 +1,23 @@
+import { useNavigate } from "react-router-dom";
 import { TextButton } from "../../components/TextButton";
 import "./MainPage.scss";
 
 export const MainPage = () => {
+  const navigate = useNavigate();
 
-  const startGame = () => {
-
-  }
+  const openLobby = () => {
+    navigate('/lobby');
+  };
 
   return (
     <div className="main-page">
       <div className="main-page__region-text">
         <h2 className="main-page__main-text">
           Чи готові ви кинути виклик долі та зіграти у цю неймовірно таємничу й
-          непросту гру для компанії? Тут кожна думка має значення, кожен постріл
+          непросту гру для компанії? <br /><br /> Тут кожна думка має значення, кожен постріл
           може змінити хід подій. І головне питання навіть не в тому - як, а в
-          тому - коли. Перед вами культова гра “Мафія” з додатковими
-          можливостями та новим пригодницьким режимом. Якщо ви справді готові -
-          натискайте кнопку Start і вирушайте у захопливу, жорстоку подорож, де
-          виживання залежить від довіри та хитрості.
+          тому - коли. <br /><br /> Перед вами культова гра “Мафія” з додатковими
+          можливостями та новим пригодницьким режимом.
         </h2>
         <p className="main-page__quote">
           "Можливо, ми не зможемо контролювати, хто живе чи помирає… але ми
@@ -28,8 +28,8 @@ export const MainPage = () => {
 
       <TextButton
         className="main-page__start-button"
-        text="START"
-        onClick={() => startGame()}
+        text="Старт"
+        onClick={() => openLobby()}
       />
     </div>
   );

@@ -12,7 +12,9 @@ import { Header } from './components/Header'
 function App() {
   return (
     <div className="app">
-      <Header />
+      <div className="app__header">
+        <Header />
+      </div>
       <div className="app__body">
         <Routes>
           <Route path='/' element={<MainPage />} />

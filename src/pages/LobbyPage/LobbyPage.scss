@@ -1,0 +1,99 @@
+@use "../../styles/mixin.scss" as *;
+
+.lobby-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: var(--container-padding);
+  flex: 1;
+
+  @include container-background;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__title {
+    color: var(--color-button);
+
+    @include text-overlay(--color-overlay-purple);
+
+    @include body-text;
+  }
+
+  &__shield {
+    @include text-overlay(--color-overlay-purple);
+
+    &--error {
+      color: #7c0e0ed7;
+    }
+
+    &--success {
+      color: #156515cc;
+    }
+  }
+
+  &__region-add-player {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__input {
+    background-color: rgba(108, 108, 108, 0.612);
+    color: var(--color-button);
+    font-size: 20px;
+    padding-left: 10px;
+  }
+
+  &__button-add {
+    width: 40px;
+    height: 40px;
+    color: var(--color-button);
+    background-color: var(--color-overlay-purple);
+  }
+
+  &__list-players {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+
+    scrollbar-color: var(--color-overlay-purple);
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-overlay-purple);
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+
+  &__start-button {
+    background-color: var(--green-color);
+    width: 100%;
+
+    @include transition(
+      background-color var(--time-transition) ease,
+      border var(--time-transition) ease
+    );
+
+    &--disabled {
+      background-color: rgb(42, 42, 42);
+      border: 1px solid var(--color-button);
+    }
+  }
+}

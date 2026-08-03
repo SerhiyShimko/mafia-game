@@ -4,7 +4,6 @@ $md: 768px;
 $lg: 1200px;
 $xl: 1440px;
 
-
 @mixin up($size) {
   @media (min-width: $size) {
     @content;
@@ -12,6 +11,7 @@ $xl: 1440px;
 }
 
 @mixin main-heading {
+  font-family: var(--main-font);
   font-size: 38px;
   line-height: 120%;
   letter-spacing: 0.3em;
@@ -29,30 +29,52 @@ $xl: 1440px;
 
 @mixin body-text {
   font-family: var(--main-font);
-  font-size: 20px;
-  line-height: 140%;
-  font-weight: 400;
-
-  @include up($sm) {
-    font-size: 22px;
-  }
-
-  @include up($md) {
-    font-size: 25px;
-  }
-
-  @include up($lg) {
-    font-size: 30px;
-  }
-}
-
-@mixin small-text {
-  font-family: var(--main-font);
-  font-size: 13px;
+  font-size: 16px;
   line-height: 140%;
   font-weight: 400;
 
   @include up($sm) {
     font-size: 20px;
   }
+
+  @include up($md) {
+    font-size: 22px;
+  }
+
+  @include up($lg) {
+    font-size: 24px;
+  }
+}
+
+@mixin small-text {
+  font-family: var(--main-font);
+  font-style: italic;
+  font-size: 10px;
+  line-height: 140%;
+  font-weight: 400;
+
+  @include up($sm) {
+    font-size: 14px;
+  }
+}
+
+@mixin transition($transition...) {
+  transition: $transition;
+}
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+}
+
+@mixin container-background {
+  background-color: var(--main-background);
+  border-radius: 25px;
+}
+
+@mixin text-overlay($color) {
+  padding: 10px;
+  background-color: var($color);
+  border-radius: 10px;
 }

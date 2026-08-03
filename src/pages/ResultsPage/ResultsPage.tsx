@@ -1,5 +1,5 @@
 import './ResultsPage.scss';
 
 export const ResultsPage = () => {
-  return <div>Page</div>
+  return <div className="results-page">ДЯКУЮ ЩО БУЛИ З НАМИ</div>
 }

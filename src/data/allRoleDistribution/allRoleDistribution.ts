@@ -1,0 +1,117 @@
+import type { RoleDistribution } from "../../types/RoleDistribution";
+
+export const ALL_ROLE_DISTRIBUTION: RoleDistribution[] = [
+  {
+    numberPlayers: 5,
+    roles: ["don", "commissioner", "civilian", "civilian", "civilian"],
+  },
+  {
+    numberPlayers: 6,
+    roles: ["don", "mafia", "commissioner", "doctor", "civilian", "civilian"],
+  },
+  {
+    numberPlayers: 7,
+    roles: [
+      "don",
+      "mafia",
+      "commissioner",
+      "doctor",
+      "civilian",
+      "civilian",
+      "civilian",
+    ],
+  },
+  {
+    numberPlayers: 8,
+    roles: [
+      "don",
+      "mafia",
+      "commissioner",
+      "doctor",
+      "civilian",
+      "civilian",
+      "civilian",
+      "mafia",
+    ],
+  },
+  {
+    numberPlayers: 9,
+    roles: [
+      "don",
+      "mafia",
+      "commissioner",
+      "doctor",
+      "civilian",
+      "civilian",
+      "civilian",
+      "mafia",
+      "courtesan",
+    ],
+  },
+  {
+    numberPlayers: 10,
+    roles: [
+      "don",
+      "mafia",
+      "commissioner",
+      "doctor",
+      "civilian",
+      "civilian",
+      "civilian",
+      "mafia",
+      "courtesan",
+      "civilian"
+    ],
+  },
+  {
+    numberPlayers: 11,
+    roles: [
+      "don",
+      "mafia",
+      "commissioner",
+      "doctor",
+      "civilian",
+      "civilian",
+      "civilian",
+      "mafia",
+      "courtesan",
+      "civilian",
+      "maniac",
+    ],
+  },
+  {
+    numberPlayers: 12,
+    roles: [
+      "don",
+      "mafia",
+      "commissioner",
+      "doctor",
+      "civilian",
+      "civilian",
+      "civilian",
+      "mafia",
+      "courtesan",
+      "civilian",
+      "maniac",
+      "mafia",
+    ],
+  },
+  {
+    numberPlayers: 13,
+    roles: [
+      "don",
+      "mafia",
+      "commissioner",
+      "doctor",
+      "civilian",
+      "civilian",
+      "civilian",
+      "mafia",
+      "courtesan",
+      "civilian",
+      "maniac",
+      "mafia",
+      "bodyguard"
+    ],
+  },
+];
