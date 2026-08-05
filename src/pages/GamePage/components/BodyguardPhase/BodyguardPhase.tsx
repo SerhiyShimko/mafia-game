@@ -38,6 +38,10 @@ export const BodyguardPhase = () => {
             return null;
           }
 
+          if (player.status === "dead") {
+            return null;
+          }
+
           return (
             <div
               className={classNames("bodyguard-phase__player", {

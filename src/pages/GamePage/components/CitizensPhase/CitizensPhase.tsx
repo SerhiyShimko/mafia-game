@@ -33,6 +33,10 @@ export const CitizensPhase = () => {
       <GoldLine className="citizens-phase__gold-line" />
       <div className="citizens-phase__list-players">
         {players.map((player) => {
+          if (player.status === "dead") {
+            return null;
+          }
+
           return (
             <div
               className={classNames("citizens-phase__player", {

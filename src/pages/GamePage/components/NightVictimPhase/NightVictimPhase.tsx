@@ -39,22 +39,24 @@ export const NightVictimPhase = () => {
       {killed.length === 1 && (
         <p className="night-victim-phase__text">
           {`Сходить ранкове сонце, освітлюючи втрату міста. 
-          Сьогодні був знайдений ${killed[0].role} ${killed[0].name} -
+          Сьогодні був знайдений ${killed[0].roleDescription.name.ua} ${killed[0].name} -
           тіло знайшли на порозі власного дому, сусіди мовчки відводять очі.`}
         </p>
       )}
       {killed.length === 2 && (
         <p className="night-victim-phase__text">
           {`Сходить ранкове сонце, освітлюючи втрату міста. 
-          Сьогодні були знайдені ${killed[0].role} ${killed[0].name} 
-          та ${killed[1].role} ${killed[1].name} -
+          Сьогодні були знайдені ${killed[0].roleDescription.name.ua} ${killed[0].name} 
+          та ${killed[1].roleDescription.name.ua} ${killed[1].name} -
           тіла знайшли біля власних домів, сусіди мовчки відводять очі.`}
         </p>
       )}
-      <p className="night-victim-phase__text">
-        {`Повія відвідала гравця ${prostituteCame?.name} -
+      {prostituteCame && (
+        <p className="night-victim-phase__text">
+          {`Повія відвідала гравця ${prostituteCame?.name} -
           тепер він мовчить.`}
-      </p>
+        </p>
+      )}
       <GoldLine className="night-victim-phase__gold-line" />
       <TextButton
         className="night-victim-phase__button"

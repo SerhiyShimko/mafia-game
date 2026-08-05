@@ -36,6 +36,10 @@ export const ProstitutePhase = () => {
             return null;
           }
 
+          if (player.status === "dead") {
+            return null;
+          }
+
           return (
             <div
               className={classNames("prostitute-phase__player", {

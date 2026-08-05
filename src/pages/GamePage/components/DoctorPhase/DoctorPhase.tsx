@@ -32,9 +32,9 @@ export const DoctorPhase = () => {
       <GoldLine className="doctor-phase__gold-line" />
       <div className="doctor-phase__list-players">
         {players.map((player) => {
-          // if (player.role === "doctor") {
-          //   return null;
-          // }
+          if (player.status === "dead") {
+            return null;
+          }
 
           return (
             <div

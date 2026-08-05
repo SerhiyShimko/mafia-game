@@ -4,25 +4,92 @@ import "./LobbyPage.scss";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import * as lobbyPlayersActions from "../../features/lobbyPlayers/lobbyPlayersSlice";
-import { PlayerLobby } from "./components/PlayerLobby";
+import * as playersActions from "../../features/players/playersSlice";
+import * as activePlayerActions from "../../features/activePlayer/activePlayerSlice";
 import classNames from "classnames";
+import { PlayerLobby } from "./components/PlayerLobby";
 import { useNavigate } from "react-router-dom";
+import { ALL_ROLE_DISTRIBUTION } from "../../data/allRoleDistribution/allRoleDistribution";
+import type { RoleDistribution } from "../../types/RoleDistribution";
+import type { Roles } from "../../types/Roles";
+import { ROLE_DESCRIPTIONS } from "../../data/scenario/roleDescription";
+import type { Player } from "../../types/Player";
+
+function getMix(roleDistribution: RoleDistribution): Roles[] {
+  const newArrayRoles: Roles[] = [];
+  const roles = roleDistribution.roles;
+
+  for (let i = 0; i <= roles.length - 1; i++) {
+    const randomNumber = 0 + Math.random() * 9;
+
+    if (randomNumber >= 5) {
+      newArrayRoles.push(roles[i]);
+    } else {
+      newArrayRoles.unshift(roles[i]);
+    }
+  }
+
+  return newArrayRoles;
+}
 
 export const LobbyPage = () => {
   const dispatch = useAppDispatch();
   const lobbyPlayers = useAppSelector((state) => state.lobbyPlayers);
-  const [valueName, setValueName] = useState('');
+  const players = useAppSelector((state) => state.players);
+  const activePlayer = useAppSelector((state) => state.activePlayer);
+  const [valueName, setValueName] = useState("");
   const navigate = useNavigate();
 
+  const createPlayersForGame = () => {
+    const roles = ALL_ROLE_DISTRIBUTION.find(
+      (pkg) => pkg.numberPlayers === lobbyPlayers.length,
+    );
+
+    if (players) {
+      dispatch(playersActions.clearPlayers());
+    }
+
+    if (roles && players.length !== lobbyPlayers.length) {
+      const newRoles = getMix(roles);
+
+      for (let i = 0; i <= newRoles.length - 1; i++) {
+        const currentLobbyPlayer = lobbyPlayers[i];
+        const currentRole = newRoles[i];
+        const description = ROLE_DESCRIPTIONS.find(
+          (role) => role.id === currentRole,
+        );
+
+        if (description) {
+          const newPlayer: Player = {
+            id: currentLobbyPlayer.id,
+            name: currentLobbyPlayer.name,
+            role: currentRole,
+            roleDescription: description!,
+            status: "live",
+            picture: description?.picture,
+            smallPicture: "",
+          };
+
+          dispatch(playersActions.addPlayer(newPlayer));
+
+          if (!activePlayer && currentLobbyPlayer.id === lobbyPlayers[0].id) {
+            dispatch(activePlayerActions.replaceActivePlayer(newPlayer));
+          }
+        }
+      }
+    }
+  };
+
   const downloadGame = () => {
-    navigate('/role-reveal');
+    createPlayersForGame();
+    navigate("/role-reveal");
   };
 
   const addPlayer = () => {
     const value = valueName.trim();
     if (value.length > 0) {
       dispatch(lobbyPlayersActions.addLobbyPlayer(value));
-      setValueName('');
+      setValueName("");
     }
   };
 

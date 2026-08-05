@@ -34,7 +34,8 @@ export const DayVictimPhase = () => {
       <GoldLine className="day-victim-phase__gold-line" />
       {killedPlayer && (
         <p className="day-victim-phase__text">
-          {`Сьогодні місто повісило жителя ${killedPlayer.name} він був ${killedPlayer.role} .`}
+          {`Сьогодні місто повісило жителя ${killedPlayer.name} 
+          він був ${killedPlayer.roleDescription.name.ua} .`}
         </p>
       )}
       <GoldLine className="day-victim-phase__gold-line" />
