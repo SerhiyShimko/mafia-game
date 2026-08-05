@@ -27,7 +27,7 @@
     overflow-y: auto;
     max-height: 80%;
     text-align: left;
-    color: var(--color-button);
+    color: var(--white-color);
     font-family: var(--main-font);
     font-size: clamp(18px, 2.5vw, 25px);
 
@@ -37,16 +37,16 @@
   &__quote {
     width: 55%;
     text-align: end;
-    color: var(--color-button);
+    color: var(--white-color);
     font-style: italic;
 
     @include small-text;
 
-    @include text-overlay(--red-color);
+    @include text-overlay(--color-overlay-red);
   }
 
   &__start-button {
-    background-color: var(--green-color);
+    background-color: var(--black-color);
     width: 100%;
   }
 }

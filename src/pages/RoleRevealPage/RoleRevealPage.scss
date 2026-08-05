@@ -11,14 +11,18 @@
 
   &__text-header {
     color: var(--color-button);
-    font-size: 1.2em;
+    font-size: 1.3em;
+    font-family: var(--main-font);
+    border-top: 2px solid var(--color-button);
+    border-bottom: 2px solid var(--color-button);
   
-    @include text-overlay(--main-background);
+    @include text-overlay(--color-overlay-dark);
   }
 
   &__text {
     color: var(--color-button);
     font-size: 0.9em;
+    font-family: var(--main-font);
   
     @include text-overlay(--main-background);
   }
@@ -26,7 +30,6 @@
   &__role-card {
     width: min(90vw, 45vh, 290px);
     min-width: 190px;
-    aspect-ratio: 832 / 1228;
 
     @include text-overlay(--main-background);
   }

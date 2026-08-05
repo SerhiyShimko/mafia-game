@@ -4,6 +4,8 @@
   border-radius: 10px;
   border: 1px solid var(--color-button);
   padding: 10px 15px;
+  background-color: var(--black-color);
+  width: 100%;
 
 
   &__text {
@@ -15,6 +17,6 @@
   @include transition(box-shadow var(--time-transition) ease);
 
   @include hover {
-    box-shadow: inset 0 0 10px 1px var(--black-color);
+    box-shadow: inset 0 0 10px 1px var(--color-button);
   }
 }

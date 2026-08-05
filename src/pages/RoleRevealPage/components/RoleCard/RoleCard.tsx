@@ -12,6 +12,7 @@ import * as activePlayerActions from "../../../../features/activePlayer/activePl
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import classNames from "classnames";
+import { GoldLine } from "../../../../components/GoldLine";
 
 type Props = {
   className: string;
@@ -103,24 +104,28 @@ export const RoleCard: React.FC<Props> = ({ className, player }) => {
             <h2 className="role-card__title">
               {player.roleDescription.name.ua}
             </h2>
-            <p className="role-card__description">
-              {player.roleDescription.flavorText.ua}
-            </p>
-            <div className="role-card__region-goal">
-              <h2 className="role-card__subtitle role-card__subtitle--goal">
-                ЦІЛЬ:
-              </h2>
-              <p className="role-card__text role-card__text--goal">
-                {player.roleDescription.goal.ua}
+            <div className="role-card__region-description">
+              <p className="role-card__description">
+                {player.roleDescription.flavorText.ua}
               </p>
-            </div>
-            <div className="role-card__region-night-action">
-              <h2 className="role-card__subtitle role-card__subtitle--night-action">
-                НІЧНА ДІЯ:
-              </h2>
-              <p className="role-card__text role-card__text--night-action">
-                {player.roleDescription.nightAction.ua}
-              </p>
+              <GoldLine className="role-card__gold-line" />
+              <div className="role-card__region-goal">
+                <h2 className="role-card__subtitle role-card__subtitle--goal">
+                  ЦІЛЬ
+                </h2>
+                <p className="role-card__text role-card__text--goal">
+                  {player.roleDescription.goal.ua}
+                </p>
+              </div>
+              <GoldLine className="role-card__gold-line" />
+              <div className="role-card__region-night-action">
+                <h2 className="role-card__subtitle role-card__subtitle--night-action">
+                  НІЧНА ДІЯ
+                </h2>
+                <p className="role-card__text role-card__text--night-action">
+                  {player.roleDescription.nightAction.ua}
+                </p>
+              </div>
             </div>
           </div>
         </div>

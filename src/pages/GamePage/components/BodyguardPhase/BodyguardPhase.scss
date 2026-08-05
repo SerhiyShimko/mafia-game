@@ -1,0 +1,72 @@
+@use "../../../../styles/mixin.scss" as *;
+
+.bodyguard-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  &__title {
+    font-family: var(--main-font);
+    font-size: 1.6em;
+    color: var(--color-button);
+
+    @include text-overlay(--color-overlay-dark);
+  }
+
+  &__subtitle {
+    font-family: var(--main-font);
+    font-size: 20px;
+    color: var(--white-color);
+    text-align: start;
+  }
+
+  &__text {
+    max-width: 80%;
+    font-family: var(--main-font);
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--white-color);
+    text-align: start;
+  }
+
+  &__list-players {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  &__player {
+    @include player;
+
+    @include transition(
+      color var(--time-transition) ease,
+      border var(--time-transition) ease
+    );
+
+    &--change {
+      color: var(--green-color);
+      border: 1px solid var(--green-color);
+    }
+  }
+
+  &__name {
+    font-family: var(--main-font);
+    font-size: 16px;
+  }
+
+  &__gold-line {
+    width: 80%;
+  }
+
+  &__button {
+    @include transition(background-color var(--time-transition) ease);
+
+    &--disabled {
+      background-color: var(--disabled-color-button);
+    }
+  }
+}

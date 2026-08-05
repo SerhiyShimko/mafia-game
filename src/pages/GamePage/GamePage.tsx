@@ -36,8 +36,6 @@ export const GamePage = () => {
     return null;
   }
 
-  console.log(gamePhase);
-
   return (
     <div className="game-page">
       <PhaseComponent />

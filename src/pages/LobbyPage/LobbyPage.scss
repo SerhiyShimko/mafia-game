@@ -19,15 +19,15 @@
   }
 
   &__title {
+    font-family: var(--main-font);
+    font-size: 1.6em;
     color: var(--color-button);
 
-    @include text-overlay(--color-overlay-purple);
-
-    @include body-text;
+    @include text-overlay(--color-overlay-dark);
   }
 
   &__shield {
-    @include text-overlay(--color-overlay-purple);
+    @include text-overlay(--color-overlay-dark);
 
     &--error {
       color: #7c0e0ed7;
@@ -45,7 +45,7 @@
 
   &__input {
     background-color: rgba(108, 108, 108, 0.612);
-    color: var(--color-button);
+    color: var(--white-color);
     font-size: 20px;
     padding-left: 10px;
   }
@@ -53,8 +53,8 @@
   &__button-add {
     width: 40px;
     height: 40px;
-    color: var(--color-button);
-    background-color: var(--color-overlay-purple);
+    color: var(--white-color);
+    background-color: var(--color-overlay-dark);
   }
 
   &__list-players {
@@ -65,7 +65,7 @@
     max-height: 250px;
     overflow-y: auto;
 
-    scrollbar-color: var(--color-overlay-purple);
+    scrollbar-color: var(--color-overlay-dark);
     scrollbar-width: thin;
 
     &::-webkit-scrollbar {
@@ -73,7 +73,7 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: var(--color-overlay-purple);
+      background-color: var(--color-overlay-dark);
       border-radius: 5px;
     }
 
@@ -83,17 +83,13 @@
   }
 
   &__start-button {
-    background-color: var(--green-color);
+    background-color: var(--black-color);
     width: 100%;
 
-    @include transition(
-      background-color var(--time-transition) ease,
-      border var(--time-transition) ease
-    );
+    @include transition(background-color var(--time-transition) ease);
 
     &--disabled {
-      background-color: rgb(42, 42, 42);
-      border: 1px solid var(--color-button);
+      background-color: var(--disabled-color-button);
     }
   }
 }

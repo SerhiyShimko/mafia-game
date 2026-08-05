@@ -3,6 +3,8 @@ import lobbyPlayersReducer from "../features/lobbyPlayers/lobbyPlayersSlice";
 import playersReducer from "../features/players/playersSlice";
 import activePlayerReducer from "../features/activePlayer/activePlayerSlice";
 import gamePhaseReducer from "../features/gamePhase/gamePhaseSlice";
+import nightStatisticsReducer from "../features/nightStatistics/nightStatisticsSlice";
+import dailyStatisticsReducer from "../features/dailyStatistics/dailyStatisticsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +12,8 @@ export const store = configureStore({
     players: playersReducer,
     activePlayer: activePlayerReducer,
     gamePhase: gamePhaseReducer,
+    nightStatistics: nightStatisticsReducer,
+    dailyStatistics: dailyStatisticsReducer,
   }
 })
 

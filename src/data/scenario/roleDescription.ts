@@ -23,7 +23,7 @@ export const ROLE_DESCRIPTIONS: RoleDescription[] = [
     picture: '/img/roles/mafia.jpg',
     name: { ua: 'Мафія', en: 'Mafia' },
     flavorText: {
-      ua: 'Вдень ти посміхаєшся сусідам, тиснеш руки, граєш роль доброчесного громадянина. Вночі маска спадає.',
+      ua: 'Вдень ти посміхаєшся сусідам, тиснеш руки. Вночі маска спадає.',
       en: 'By day you smile at your neighbors, shake their hands, play the part of an upstanding citizen. By night, the mask falls away.',
     },
     goal: {
@@ -91,7 +91,7 @@ export const ROLE_DESCRIPTIONS: RoleDescription[] = [
     picture: '/img/roles/courtesan.jpg',
     name: { ua: 'Повія', en: 'Courtesan' },
     flavorText: {
-      ua: 'Твоє запрошення шепоче тихіше за вітер, але відмовити йому неможливо.',
+      ua: 'Твоє запрошення шепоче тихіше за вітер.',
       en: 'Your invitation whispers quieter than the wind, yet no one can refuse it. Whoever answers your call disappears from the night entirely - and by morning, remembers nothing of what they meant to do.',
     },
     goal: {

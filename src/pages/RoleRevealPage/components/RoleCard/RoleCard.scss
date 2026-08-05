@@ -3,9 +3,7 @@
 .role-card {
   position: relative;
   perspective: 1000px;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  aspect-ratio: 832 / 1228;
 
   &__inner {
     cursor: pointer;
@@ -39,59 +37,70 @@
     &--back {
       background-size: 100% 100%;
       background-position: center;
-      border: 1px solid #53411ad5;
-
+      border: 1px solid var(--color-button);
       transform: rotateY(180deg);
     }
   }
 
   &__title {
     font-family: var(--main-font);
-    color: var(--black-color);
+    color: var(--color-button);
     font-size: 1.3em;
+    border-top: 1px solid var(--color-button);
+    border-left: 1px solid var(--color-button);
+    border-right: 1px solid var(--color-button);
 
-    @include text-overlay(--color-overlay-light);
+    @include text-overlay(--color-overlay-dark);
+  }
+
+  &__region-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--color-button);
+
+    @include text-overlay(--color-overlay-dark);
   }
 
   &__description {
-    width: 96%;
     font-family: var(--main-font);
-    color: var(--color-button);
-    font-size: 0.6em;
+    line-height: 1.2em;
+    font-size: 0.8em;
     text-align: left;
-    line-height: 120%;
-
-    @include text-overlay(--color-overlay-yellow);
-  }
-
-  &__region-goal {
-    width: 96%;
-    color: var(--green-color);
-
-    @include text-overlay(--color-overlay-green);
-  }
-
-  &__region-night-action {
-    width: 96%;
-    color: var(--red-color);
-    margin-bottom: 2%;
-
-    @include text-overlay(--color-overlay-red);
+    color: var(--white-color);
   }
 
   &__subtitle {
     font-family: var(--main-font);
-    color: var(--color-button);
-    font-size: 0.6em;
+    font-size: 0.8em;
     text-align: left;
-    line-height: 120%;
+
+    &--goal {
+      color: var(--green-color);
+    }
+
+    &--night-action {
+      color: var(--red-color);
+    }
   }
 
   &__text {
     font-family: var(--main-font);
-    color: var(--color-button);
-    font-size: 0.6em;
+    font-size: 0.8em;
     text-align: left;
-    line-height: 120%;
+    color: var(--white-color);
+    margin-top: 1%;
+    line-height: 1.2em;
+  }
+
+  &__gold-line {
+    width: 80%;
+    margin: 0.6em;
+  }
+
+  &__region-goal,
+  &__region-night-action {
+    width: 100%;
   }
 }
