@@ -35,21 +35,18 @@ function getMix(roleDistribution: RoleDistribution): Roles[] {
 export const LobbyPage = () => {
   const dispatch = useAppDispatch();
   const lobbyPlayers = useAppSelector((state) => state.lobbyPlayers);
-  const players = useAppSelector((state) => state.players);
   const activePlayer = useAppSelector((state) => state.activePlayer);
   const [valueName, setValueName] = useState("");
   const navigate = useNavigate();
 
   const createPlayersForGame = () => {
+    dispatch(activePlayerActions.removeActivePlayer());
+    dispatch(playersActions.clearPlayers());
     const roles = ALL_ROLE_DISTRIBUTION.find(
       (pkg) => pkg.numberPlayers === lobbyPlayers.length,
     );
 
-    if (players) {
-      dispatch(playersActions.clearPlayers());
-    }
-
-    if (roles && players.length !== lobbyPlayers.length) {
+    if (roles) {
       const newRoles = getMix(roles);
 
       for (let i = 0; i <= newRoles.length - 1; i++) {
@@ -61,18 +58,18 @@ export const LobbyPage = () => {
 
         if (description) {
           const newPlayer: Player = {
-            id: currentLobbyPlayer.id,
+            id: i + 1,
             name: currentLobbyPlayer.name,
             role: currentRole,
-            roleDescription: description!,
+            roleDescription: description,
             status: "live",
-            picture: description?.picture,
+            picture: description.picture,
             smallPicture: "",
           };
 
           dispatch(playersActions.addPlayer(newPlayer));
 
-          if (!activePlayer && currentLobbyPlayer.id === lobbyPlayers[0].id) {
+          if (!activePlayer && currentLobbyPlayer.id === 1) {
             dispatch(activePlayerActions.replaceActivePlayer(newPlayer));
           }
         }

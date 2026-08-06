@@ -30,11 +30,7 @@ const PHASE_COMPONENTS: Record<GamePhases, ComponentType> = {
 
 export const GamePage = () => {
   const gamePhase = useAppSelector((state) => state.gamePhase);
-  const players = useAppSelector((state) => state.players);
   const PhaseComponent = PHASE_COMPONENTS[gamePhase];
-
-  console.log('------------------------------------------');
-  console.log('players:', players);
 
   if (!PhaseComponent) {
     return null;

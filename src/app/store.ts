@@ -32,6 +32,7 @@ const persistConfig = {
   whitelist: [
     "lobbyPlayers",
     "players",
+    "gamePhase",
     "nightStatistics",
     "dailyStatistics",
     "activePlayer",

@@ -29,7 +29,7 @@ const nightStatisticsSlice = createSlice({
     setBodyguardCame: (state, action: PayloadAction<Player>) => {
       state.bodyguardCame = action.payload;
     },
-    removeNightStatistics: () => {
+    cleanNightStatistics: () => {
       return initialState;
     },
   },
@@ -42,5 +42,5 @@ export const {
   setKilled,
   setKilledManiac,
   setProstituteCame,
-  removeNightStatistics,
+  cleanNightStatistics,
 } = nightStatisticsSlice.actions;

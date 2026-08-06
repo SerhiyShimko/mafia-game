@@ -2,10 +2,7 @@ import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { TextButton } from "../../../../components/TextButton";
 import "./DayVictimPhase.scss";
 import * as phaseGameActions from "../../../../features/gamePhase/gamePhaseSlice";
-import * as playersActions from "../../../../features/players/playersSlice";
-import * as nightStatisticsActions from "../../../../features/nightStatistics/nightStatisticsSlice";
 import { GoldLine } from "../../../../components/GoldLine";
-import { killPlayers } from "../../../../utils/killPlayers";
 import { gameOver } from "../../../../utils/gameOver";
 
 export const DayVictimPhase = () => {
@@ -14,13 +11,6 @@ export const DayVictimPhase = () => {
   const { killedPlayer } = useAppSelector((state) => state.dailyStatistics);
 
   const nextPhase = () => {
-    if (killedPlayer) {
-      dispatch(
-        playersActions.updatePlayers(killPlayers(killedPlayer, players)),
-      );
-    }
-    dispatch(nightStatisticsActions.removeNightStatistics());
-
     if (gameOver(players)) {
       dispatch(phaseGameActions.changePhase("gameOver"));
     } else {
@@ -30,7 +20,7 @@ export const DayVictimPhase = () => {
 
   return (
     <div className="day-victim-phase">
-      <h2 className="day-victim-phase__title">Фаза ранок</h2>
+      <h2 className="day-victim-phase__title">Фаза вечір</h2>
       <GoldLine className="day-victim-phase__gold-line" />
       {killedPlayer && (
         <p className="day-victim-phase__text">

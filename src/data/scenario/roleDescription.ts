@@ -95,7 +95,7 @@ export const ROLE_DESCRIPTIONS: RoleDescription[] = [
       en: 'Your invitation whispers quieter than the wind, yet no one can refuse it. Whoever answers your call disappears from the night entirely - and by morning, remembers nothing of what they meant to do.',
     },
     goal: {
-      ua: 'Непомітно керувати ходом гри, забираючи чужі голоси в потрібний момент.',
+      ua: 'Непомітно керувати ходом гри, забираючи чужі голоси.',
       en: 'Quietly steer the game by silencing votes at the right moment.',
     },
     nightAction: {

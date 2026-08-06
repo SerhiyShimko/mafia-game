@@ -2,12 +2,15 @@ import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import { TextButton } from "../../../../components/TextButton";
 import "./CitizensPhase.scss";
 import * as phaseGameActions from "../../../../features/gamePhase/gamePhaseSlice";
+import * as nightStatisticsActions from "../../../../features/nightStatistics/nightStatisticsSlice";
+import * as playersActions from "../../../../features/players/playersSlice";
 import * as dailyStatisticsActions from "../../../../features/dailyStatistics/dailyStatisticsSlice";
 import { useState } from "react";
 import type { Player } from "../../../../types/Player";
 import { GoldLine } from "../../../../components/GoldLine";
 import classNames from "classnames";
 import { Speech } from "lucide-react";
+import { killPlayers } from "../../../../utils/killPlayers";
 
 export const CitizensPhase = () => {
   const players = useAppSelector((state) => state.players);
@@ -18,6 +21,10 @@ export const CitizensPhase = () => {
   const nextPhase = () => {
     if (changePlayer) {
       dispatch(dailyStatisticsActions.killPlayer(changePlayer));
+      dispatch(
+        playersActions.updatePlayers(killPlayers(changePlayer, players)),
+      );
+      dispatch(nightStatisticsActions.cleanNightStatistics());
       dispatch(phaseGameActions.changePhase("dayVictim"));
     }
   };

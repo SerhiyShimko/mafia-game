@@ -20,8 +20,9 @@ const gamePhaseSlice = createSlice({
   initialState,
   reducers: {
     changePhase: (_, action: PayloadAction<GamePhases>) => action.payload,
+    clearPhase: () => initialState,
   },
 });
 
 export default gamePhaseSlice.reducer;
-export const { changePhase } = gamePhaseSlice.actions;
+export const { changePhase, clearPhase } = gamePhaseSlice.actions;

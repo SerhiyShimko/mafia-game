@@ -8,6 +8,7 @@ import { GoldLine } from "../../../../components/GoldLine";
 import { getkilledPlayer } from "../../../../utils/getKilledPlayer";
 import { killPlayers } from "../../../../utils/killPlayers";
 import { gameOver } from "../../../../utils/gameOver";
+import { useEffect } from "react";
 
 export const NightVictimPhase = () => {
   const nightStatistics = useAppSelector((state) => state.nightStatistics);
@@ -15,10 +16,13 @@ export const NightVictimPhase = () => {
   const dispatch = useAppDispatch();
   const { killed, prostituteCame } = getkilledPlayer(nightStatistics, players);
 
-  const nextPhase = () => {
+  useEffect(() => {
     dispatch(playersActions.updatePlayers(killPlayers(killed, players)));
-    dispatch(nightStatisticsActions.removeNightStatistics());
+  }, []);
 
+  const nextPhase = () => {
+    dispatch(nightStatisticsActions.cleanNightStatistics());
+    
     if (gameOver(players)) {
       dispatch(phaseGameActions.changePhase("gameOver"));
     } else {
