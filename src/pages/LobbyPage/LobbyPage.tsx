@@ -14,6 +14,7 @@ import type { RoleDistribution } from "../../types/RoleDistribution";
 import type { Roles } from "../../types/Roles";
 import { ROLE_DESCRIPTIONS } from "../../data/scenario/roleDescription";
 import type { Player } from "../../types/Player";
+import { clearGame } from "../../utils/clearGame";
 
 function getMix(roleDistribution: RoleDistribution): Roles[] {
   const newArrayRoles: Roles[] = [];
@@ -40,8 +41,8 @@ export const LobbyPage = () => {
   const navigate = useNavigate();
 
   const createPlayersForGame = () => {
-    dispatch(activePlayerActions.removeActivePlayer());
-    dispatch(playersActions.clearPlayers());
+    clearGame(dispatch);
+
     const roles = ALL_ROLE_DISTRIBUTION.find(
       (pkg) => pkg.numberPlayers === lobbyPlayers.length,
     );

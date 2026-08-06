@@ -1,6 +1,6 @@
-@use '../../styles/mixin.scss' as *;
+@use "../../styles/mixin.scss" as *;
 
-.results-page {
+.setting-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -27,28 +27,5 @@
     line-height: 140%;
     color: var(--white-color);
     text-align: start;
-  }
-
-  &__list-players {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    max-height: 250px;
-    overflow-y: auto;
-    padding-right: 10px;
-  }
-
-  &__player {
-    @include player;
-
-    @include transition(
-      color var(--time-transition) ease,
-      border var(--time-transition) ease
-    );
-
-    &--dead {
-      color: var(--green-color);
-      border: 1px solid var(--green-color);
-    }
   }
 }

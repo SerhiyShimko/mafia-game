@@ -1,0 +1,14 @@
+@use '../../styles/mixin.scss' as *;
+
+.not-found-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+  padding: var(--container-padding);
+  flex: 1;
+
+  @include container-background;
+}

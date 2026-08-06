@@ -2,7 +2,7 @@ import type React from "react";
 import './GoldLine.scss';
 
 type Props = {
-  className: string;
+  className?: string;
 };
 
 export const GoldLine: React.FC<Props> = ({ className }) => {

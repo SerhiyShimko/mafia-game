@@ -72,19 +72,23 @@ export const CommissarPhase = () => {
         disabled={changePlayer ? false : true}
       />
       <dialog className="commissar-phase__dialog" ref={dialog}>
-        <div className="commissar-phase__container-dialog">
-          <HatGlasses size={50} />
-          <h2 className="commissar-phase__dialog-text">
-            {changePlayer?.role === "don" || changePlayer?.role === "mafia"
-              ? "ТАК - ЦЕ МАФІЯ"
-              : "НІ - ЦЕ МИРНИЙ"}
-          </h2>
-          <TextButton
-            className="commissar-phase__dialog-button"
-            text="Наступна фаза"
-            onClick={nextPhase}
-          />
-        </div>
+        <HatGlasses
+          size={50}
+          className={classNames("commissar-phase__icon", {
+            "commissar-phase__icon--red":
+              changePlayer?.role === "don" || changePlayer?.role === "mafia",
+          })}
+        />
+        <h2 className="commissar-phase__dialog-text">
+          {changePlayer?.role === "don" || changePlayer?.role === "mafia"
+            ? "ТАК - ЦЕ МАФІЯ"
+            : "НІ - ЦЕ МИРНИЙ"}
+        </h2>
+        <TextButton
+          className="commissar-phase__dialog-button"
+          text="Наступна фаза"
+          onClick={nextPhase}
+        />
       </dialog>
     </div>
   );

@@ -51,7 +51,7 @@ export const GameOverPhase = () => {
         <TextButton
           className="game-over-phase__button-new-game"
           text="Нова гра"
-          onClick={() => createNewGame()}
+          onClick={createNewGame}
         />
       </div>
     </div>

@@ -1,4 +1,4 @@
-@use '../../styles/mixin.scss' as *;
+@use "../../styles/mixin.scss" as *;
 
 .header {
   display: flex;
@@ -29,6 +29,32 @@
     text-align: center;
 
     @include main-heading;
+  }
+
+  &__dialog {
+    max-width: max-content;
+    max-width: 90%;
+    margin-inline: auto;
+    border-radius: 20px;
+    background-color: var(--color-overlay-dark);
+    border: 1px solid var(--color-button);
+
+    &::backdrop {
+      background: rgba(42, 26, 7, 0.405);
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  &__text {
+    font-family: var(--main-font);
+    color: var(--white-color);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  &__region-buttons {
+    display: flex;
+    gap: 20px;
   }
 
   @include up($md) {
