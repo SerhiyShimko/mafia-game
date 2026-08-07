@@ -1,0 +1,31 @@
+@use "../../styles/mixin.scss" as *;
+
+.setting-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  align-items: center;
+  padding: var(--container-padding);
+  flex: 1;
+
+  @include container-background;
+
+  &__title {
+    font-family: var(--main-font);
+    font-size: 1.6em;
+    color: var(--color-button);
+
+    @include text-overlay(--color-overlay-dark);
+  }
+
+  &__text {
+    max-width: 80%;
+    font-family: var(--main-font);
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--white-color);
+    text-align: start;
+  }
+}

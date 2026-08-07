@@ -1,0 +1,64 @@
+@use "../../styles/mixin.scss" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  min-width: 0;
+  width: 100%;
+  height: 70px;
+  background-color: var(--main-background);
+  padding-inline: 10px;
+
+  &__button {
+    background-color: transparent;
+    color: var(--color-button);
+  }
+
+  &__line {
+    width: 2px;
+    height: 80%;
+    background-color: var(--color-button);
+  }
+
+  &__main-text {
+    min-width: 0;
+    width: max-content;
+    color: var(--color-button);
+    text-align: center;
+
+    @include main-heading;
+  }
+
+  &__dialog {
+    max-width: max-content;
+    max-width: 90%;
+    margin-inline: auto;
+    border-radius: 20px;
+    background-color: var(--color-overlay-dark);
+    border: 1px solid var(--color-button);
+
+    &::backdrop {
+      background: rgba(42, 26, 7, 0.405);
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  &__text {
+    font-family: var(--main-font);
+    color: var(--white-color);
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  &__region-buttons {
+    display: flex;
+    gap: 20px;
+  }
+
+  @include up($md) {
+    height: 90px;
+    padding-inline: 20px;
+  }
+}

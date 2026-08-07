@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  height: 100dvh;
+  overflow: hidden;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}

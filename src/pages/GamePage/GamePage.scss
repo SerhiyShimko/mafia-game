@@ -1,0 +1,8 @@
+@use '../../styles/mixin.scss' as *;
+
+.game-page {
+  width: 100%;
+  padding: var(--container-padding);
+
+  @include container-background;
+}

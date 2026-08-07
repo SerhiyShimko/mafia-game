@@ -1,0 +1,26 @@
+@use '../../../../styles/mixin.scss' as *;
+
+.player-lobby {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 30%;
+  gap: 20px;
+  padding: 3px 10px;
+  background-color: var(--color-button);
+  border-radius: 10px;
+
+  &__name {
+    color: var(--black-color);
+
+    @include body-text;
+  }
+
+  &__button-remove {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: var(--color-button);
+    background-color: var(--color-overlay-purple);
+  }
+}
