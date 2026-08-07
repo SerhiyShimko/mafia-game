@@ -39,7 +39,7 @@ export const Header = () => {
         <Landmark size={50} />
       </button>
       <div className="header__line" />
-      <h1 className="header__main-text">MAFIA</h1>
+      <h1 className="header__main-text">МАФІЯ</h1>
       <div className="header__line" />
       <button
         className="header__button header__button--settings"
